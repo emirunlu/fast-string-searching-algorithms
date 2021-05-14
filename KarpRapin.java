@@ -1,6 +1,6 @@
 public class KarpRapin {
 
-    public static final int prime = 100003;
+    public static final int prime = 10000019;
 
     public static void main(String args[]) {
         String fullString = "GCATCGCAGAGAGTATACAGTACG";
