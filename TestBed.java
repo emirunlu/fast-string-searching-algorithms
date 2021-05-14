@@ -15,8 +15,8 @@ public class TestBed {
             long startTime = System.nanoTime();
             algorithms.get(i).search(toBeSearched,fullString);
             long endTime = System.nanoTime();
-            long duration = (endTime - startTime)/1000000;
-            System.out.println(algorithms.get(i).getName()+" duration: "+duration);
+            long duration = (endTime - startTime);
+            System.out.println(algorithms.get(i).getName()+" duration: "+duration + " nanoseconds");//TODO make this less bad
         }
     }
 }
