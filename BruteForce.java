@@ -6,6 +6,7 @@ public class BruteForce implements StringSearchAlgorithm {
         for (int i = 0; i+phraseLen < fullLen; i++) {
             if(fullText.substring(i,i+phraseLen).equals(phrase)){
                 System.out.println("found instance of "+phrase+" starting at character "+i);
+                break;
             }
         }
     }

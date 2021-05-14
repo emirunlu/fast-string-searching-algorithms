@@ -3,7 +3,7 @@ public class KarpRapin implements StringSearchAlgorithm {
     public static final int prime = 10000019;
 
     @Override
-    public void search(String phrase, String fullText){//TODO does not return where phrase is found????
+    public void search(String phrase, String fullText){
         int n = fullText.length();
         int m = phrase.length();
 
