@@ -10,6 +10,7 @@ public class TestBed {
         algorithms.add(new BruteForce());
         algorithms.add(new KarpRapin());
         algorithms.add(new KnuthMorrisPratt());
+        algorithms.add(new ZhuTakaoka());
 
         for (int i = 0; i < algorithms.size(); i++) {
             long startTime = System.nanoTime();
