@@ -1,4 +1,8 @@
-public class KnuthMorrisPratt implements StringSearchAlgorithm{
+package com.cs333.stringsearch;
+
+public class KnuthMorrisPratt implements StringSearchAlgorithm {
+
+    private static final String Name = "Knuth-Morris-Pratt";
 
     @Override
     public void search(String partial, String full) {
@@ -7,16 +11,15 @@ public class KnuthMorrisPratt implements StringSearchAlgorithm{
 
         int pi = 0;
         int fi = 0;
-        while (fi < fullLen){
-            if(partial.charAt(pi) == full.charAt(fi)){
+        while (fi < fullLen) {
+            if (partial.charAt(pi) == full.charAt(fi)) {
                 fi++;
                 pi++;
             }
-            if(pi == partial.length()){
-                System.out.println("found instance of "+partial+" starting at character "+(fi-pi));
+            if (pi == partial.length()) {
+                System.out.println(Name + " - Found instance of " + partial + " starting at character " + (fi - pi + 1));
                 pi = lps[pi - 1];
-            }
-            else if (fi < fullLen && partial.charAt(pi) != full.charAt(fi)) {
+            } else if (fi < fullLen && partial.charAt(pi) != full.charAt(fi)) {
                 if (pi != 0)
                     pi = lps[pi - 1];
                 else
@@ -25,22 +28,22 @@ public class KnuthMorrisPratt implements StringSearchAlgorithm{
         }
     }
 
-    public int[] preprocessKMP(String partial){
+    private int[] preprocessKMP(String partial) {
         int len = 0;
         int phraseLen = partial.length();
         int[] lps = new int[phraseLen]; //Longest Proper Prefix
-        lps[0]=0;
+        lps[0] = 0;
 
         int i = 1;
-        while (i < phraseLen){
-            if (partial.charAt(i)==partial.charAt(len)){
+        while (i < phraseLen) {
+            if (partial.charAt(i) == partial.charAt(len)) {
                 len++;
                 lps[i] = len;
                 i++;
-            }else{
-                if(len!=0){
+            } else {
+                if (len != 0) {
                     len = lps[len - 1];
-                }else{
+                } else {
                     lps[i] = len;
                     i++;
                 }
@@ -51,7 +54,7 @@ public class KnuthMorrisPratt implements StringSearchAlgorithm{
 
     @Override
     public String getName() {
-        return "Knuth-Morris-Pratt";
+        return Name;
     }
 }
 

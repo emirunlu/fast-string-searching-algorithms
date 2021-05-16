@@ -1,8 +1,11 @@
+package com.cs333.stringsearch;
+
 import java.util.ArrayList;
 
 public class TestBed {
+
     public static void main(String[] args) {
-        String fullString = "GCATCGCAGAGAGTATACAGTACG";
+        String fullString = "GCATCGCAGAGAGTATACAGTACGGCAGAGAG";
         String toBeSearched = "GCAGAGAG";
 
         ArrayList<StringSearchAlgorithm> algorithms = new ArrayList<>();
@@ -11,13 +14,14 @@ public class TestBed {
         algorithms.add(new KarpRapin());
         algorithms.add(new KnuthMorrisPratt());
         algorithms.add(new ZhuTakaoka());
+        algorithms.add(new BoyerMoore());
 
-        for (int i = 0; i < algorithms.size(); i++) {
+        for (StringSearchAlgorithm algorithm : algorithms) {
             long startTime = System.nanoTime();
-            algorithms.get(i).search(toBeSearched,fullString);
+            algorithm.search(toBeSearched, fullString);
             long endTime = System.nanoTime();
             long duration = (endTime - startTime);
-            System.out.println(algorithms.get(i).getName()+" duration: "+duration + " nanoseconds");//TODO make this less bad
+            System.out.println(algorithm.getName() + " duration: " + duration + " nanoseconds");//TODO make this less bad
         }
     }
 }
