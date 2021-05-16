@@ -21,7 +21,7 @@ public class TestBed {
             algorithm.search(toBeSearched, fullString);
             long endTime = System.nanoTime();
             long duration = (endTime - startTime);
-            System.out.println(algorithm.getName() + " duration: " + duration + " nanoseconds");//TODO make this less bad
+            System.out.println(algorithm.getName() + " duration: " + duration + " nanoseconds\n");//TODO make this less bad
         }
     }
 }

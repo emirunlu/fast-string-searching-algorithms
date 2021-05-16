@@ -36,14 +36,14 @@ public class KarpRapin implements StringSearchAlgorithm {
         String nextSub;
         String prevSub;
 
-        for (int i = 0; i < n - m; i++) {
+        for (int i = 0; i < n - m + 1; i++) {
             String substring = fullText.substring(i, i + m);
             if (i == 0) {
                 nextSub = substring;
                 fullSubHash = hash(nextSub);
                 if (hashToBeSearched == fullSubHash) {
                     if (checkCharByChar(phrase, nextSub)) {
-                        System.out.println("Match found in " + (i + 1) + " iteration");
+                        System.out.println(Name + " - Found instance of " + phrase + " starting at character " + (i + 1));
                     }
                 }
             } else {
