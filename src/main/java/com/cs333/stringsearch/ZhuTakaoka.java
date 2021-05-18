@@ -81,10 +81,19 @@ public class ZhuTakaoka implements StringSearchAlgorithm {
                 System.out.println(Name + " - Found instance of " + partial + " starting at character " + (j + 1));
                 j += bmGs[0];
             } else {
-                int bmGsn = bmGs[i];
-                int ztn = ZT[alphabet.indexOf(full.charAt(j + patLen - 2))][alphabet.indexOf(full.charAt(j + patLen - 1))];
-                j += Math.max(bmGsn, ztn);
-            }
+				int bmGsn = bmGs[i];
+				if (j + patlen - 2 > -1) {
+					int ztn = ZT[alphabet.indexOf(s.charAt(j + patlen - 2))][alphabet
+							.indexOf(s.charAt(j + patlen - 1))];
+					if (bmGsn > ztn) {
+						j += bmGsn;
+					} else {
+						j += ztn;
+					}
+				} else {
+					j += bmGsn;
+				}
+			}
         }
     }
 
