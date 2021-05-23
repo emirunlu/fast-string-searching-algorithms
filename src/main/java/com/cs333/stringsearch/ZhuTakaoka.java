@@ -10,6 +10,9 @@ public class ZhuTakaoka implements StringSearchAlgorithm {
         int sLen = full.length();
         int patLen = partial.length();
 
+        if (sLen < patLen || patLen == 0)
+            return;
+
         // Preparing the alphabet
         String alphabet = "";
         for (int i = 0; i < sLen; i++) {
@@ -82,14 +85,10 @@ public class ZhuTakaoka implements StringSearchAlgorithm {
                 j += bmGs[0];
             } else {
 				int bmGsn = bmGs[i];
-				if (j + patlen - 2 > -1) {
-					int ztn = ZT[alphabet.indexOf(s.charAt(j + patlen - 2))][alphabet
-							.indexOf(s.charAt(j + patlen - 1))];
-					if (bmGsn > ztn) {
-						j += bmGsn;
-					} else {
-						j += ztn;
-					}
+				if (j + patLen - 2 > -1) {
+					int ztn = ZT[alphabet.indexOf(full.charAt(j + patLen - 2))][alphabet
+							.indexOf(full.charAt(j + patLen - 1))];
+                    j += Math.max(bmGsn, ztn);
 				} else {
 					j += bmGsn;
 				}

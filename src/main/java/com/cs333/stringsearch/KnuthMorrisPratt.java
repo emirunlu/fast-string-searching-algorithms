@@ -7,6 +7,11 @@ public class KnuthMorrisPratt implements StringSearchAlgorithm {
     @Override
     public void search(String partial, String full) {
         int fullLen = full.length();
+        int partialLen = partial.length();
+
+        if(partialLen > fullLen || partialLen == 0)
+            return;
+
         int[] lps = preprocessKMP(partial);
 
         int pi = 0;

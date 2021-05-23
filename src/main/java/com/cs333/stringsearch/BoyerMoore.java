@@ -13,6 +13,9 @@ public class BoyerMoore implements StringSearchAlgorithm {
         var pat = partial.toCharArray();
         var txt = full.toCharArray();
 
+        if (patLength > fullLength)
+            return;
+
         int[] badCharArray = new int[256];
         badCharacterHeuristic(pat, patLength, badCharArray);
 

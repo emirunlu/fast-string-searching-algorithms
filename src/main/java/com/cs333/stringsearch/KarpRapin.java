@@ -1,5 +1,6 @@
 package com.cs333.stringsearch;
 
+
 public class KarpRapin implements StringSearchAlgorithm {
 
     private static final String Name = "Karp-Rapin";
@@ -30,6 +31,9 @@ public class KarpRapin implements StringSearchAlgorithm {
     public void search(String phrase, String fullText) {
         int n = fullText.length();
         int m = phrase.length();
+
+        if (n < m || m == 0)
+            return;
 
         int hashToBeSearched = hash(phrase);
         int fullSubHash;
