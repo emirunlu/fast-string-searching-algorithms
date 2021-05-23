@@ -1,6 +1,5 @@
 package com.cs333.stringsearch;
 
-
 public class KarpRapin implements StringSearchAlgorithm {
 
     private static final String Name = "Karp-Rapin";
