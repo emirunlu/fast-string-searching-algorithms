@@ -17,14 +17,14 @@ public class TestBed {
         algorithms.add(new BoyerMoore());
 
         for (StringSearchAlgorithm algorithm : algorithms) {
-            try{
+            try {
                 long startTime = System.nanoTime();
                 algorithm.search(toBeSearched, fullString);
                 long endTime = System.nanoTime();
                 float duration = (endTime - startTime) / 1000000.0f;
                 System.out.println(algorithm.getName() + " duration: " + duration + " milliseconds\n");//TODO make this less bad
-            }catch(Exception e){
-                System.out.println(algorithm.getName()+" has failed\n");
+            } catch (Exception e) {
+                System.out.println(algorithm.getName() + " has failed\n");
             }
         }
     }

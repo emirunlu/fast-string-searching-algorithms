@@ -8,9 +8,9 @@ public class BruteForce implements StringSearchAlgorithm {
     public void search(String phrase, String fullText) {
         int phraseLen = phrase.length();
         int fullLen = fullText.length();
-        for (int i = 0; i + phraseLen < fullLen+1; i++) {
+        for (int i = 0; i + phraseLen < fullLen + 1; i++) {
             if (fullText.substring(i, i + phraseLen).equals(phrase)) {
-                System.out.println(Name + " - Found instance of " + phrase + " starting at character " + (i + 1) );
+                System.out.println(Name + " - Found instance of " + phrase + " starting at character " + (i + 1));
             }
         }
     }

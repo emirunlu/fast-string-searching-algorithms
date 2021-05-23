@@ -1,4 +1,5 @@
 package com.cs333.stringsearch;
+
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;

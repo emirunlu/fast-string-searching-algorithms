@@ -9,7 +9,7 @@ public class KnuthMorrisPratt implements StringSearchAlgorithm {
         int fullLen = full.length();
         int partialLen = partial.length();
 
-        if(partialLen > fullLen || partialLen == 0)
+        if (partialLen > fullLen || partialLen == 0)
             return;
 
         int[] lps = preprocessKMP(partial);
