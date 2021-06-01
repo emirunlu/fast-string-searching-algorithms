@@ -1,1 +1,1 @@
-# cs333-fast-string-searching-algorithm
+fast-string-searching-algorithms
